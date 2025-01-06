@@ -6,15 +6,13 @@ public class CrossCorrelation1 {
         double sum = 0.0;
 
         for(int i = 0; i<n; i++){
-            for(int j = 0; j<n; j++){
-                if(j<i){
-                    sum += 0;
-                }else{
-                    sum += sig1[j]*sig2[j-i];
+            sum =0.0;
+            for(int j = i; j<n; j++){
+                sum += sig1[j]*sig2[j-i];
                 }
-            }
+
             cross[i] = sum;
-            sum = 0.0;
+
         }
         return cross;
     }
@@ -30,4 +28,4 @@ public class CrossCorrelation1 {
         double[] sig2 = {0.8, 0.9, 0.4, 0.4, 0.2};
         afficheTab(crosscorrelation(sig1, sig2));
     }
-}
+
