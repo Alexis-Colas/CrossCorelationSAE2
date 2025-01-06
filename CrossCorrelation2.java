@@ -15,6 +15,18 @@ public class CrossCorrelation2 {
 
         }
         return cross;
-
     }
+
+    public static void afficheTab(double[] tab){
+        for (int i = 0; i < tab.length; i++) {
+            System.out.println(tab[i]);
+        }
+    }
+
+    public static void main(String[] args) {
+        double[] sig1 = {0.4, 0.4, 0.2, 0.7, 0.8};
+        double[] sig2 = {0.8, 0.9, 0.4, 0.4, 0.2};
+        afficheTab(crosscorrelation(sig1, sig2));
+    }
+    
 }
