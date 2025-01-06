@@ -1,10 +1,33 @@
 public class CrossCorrelation1 {
 
     public static double[] crosscorrelation(double[] sig1, double[] sig2){
-        System.out.println("Hello, World!");
+        int n = sig1.length;
+        double[] cross = new double[n];
+        double sum = 0.0;
+
+        for(int i = 0; i<n; i++){
+            for(int j = 0; j<n; j++){
+                if(j<i){
+                    sum += 0;
+                }else{
+                    sum += sig1[j]*sig2[j-i];
+                }
+            }
+            cross[i] = sum;
+            sum = 0.0;
+        }
+        return cross;
+    }
+
+    public static void afficheTab(double[] tab){
+        for (int i = 0; i < tab.length; i++) {
+            System.out.println(tab[i]);
+        }
     }
 
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        double[] sig1 = {0.4, 0.4, 0.2, 0.7, 0.8};
+        double[] sig2 = {0.8, 0.9, 0.4, 0.4, 0.2};
+        afficheTab(crosscorrelation(sig1, sig2));
     }
 }
