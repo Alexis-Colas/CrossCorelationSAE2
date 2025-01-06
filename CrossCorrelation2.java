@@ -14,14 +14,18 @@ public class CrossCorrelation2 {
                     sig3[k]=0.0;
 
                 sig3[k]=sig2[k-gap];
+                System.out.println("ici " + k);
 
-                sum += sig1[k]*sig3[k];
             }
-            gap++;
+            gap= gap +1;
+
+            for (int j=0; j<n; j++) {
+                sum += sig1[j]*sig3[j];
+                System.out.println(sum);
+            }
 
             cross[t] = sum;
             sum = 0.0;
-
         }
 
         return cross;
@@ -40,3 +44,4 @@ public class CrossCorrelation2 {
 
     }
 }
+
