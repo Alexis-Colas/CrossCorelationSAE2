@@ -24,9 +24,14 @@ public class CrossCorrelation2 {
     }
 
     public static void main(String[] args) {
+        Profiler.init();
         double[] sig1 = {0.4, 0.4, 0.2, 0.7, 0.8};
         double[] sig2 = {0.8, 0.9, 0.4, 0.4, 0.2};
-        afficheTab(crosscorrelation(sig1, sig2));
+        for(int i = 0; i<1000000000; i++){
+            double[] cross = Profiler.analyse(CrossCorrelation1::crosscorrelation, sig1, sig2);
+            //afficheTab(cross);
+        }
+        Profiler.printResult();
     }
     
 }
