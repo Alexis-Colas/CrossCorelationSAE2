@@ -31,23 +31,6 @@ public class CrossCorrelation2 {
         return cross;
     }
 
-    public static void afficheTab(double[] tab){
-        int count=0;
-        System.out.println("CrossCorrelation1: Tables of " + tab.length + " values");
-        System.out.print("[");
-        for (int i = 0; i < tab.length-1; i++) {
-            if(count==9) {
-                System.out.println(" " + tab[i] + ",");
-                count=0;
-            }
-            System.out.print(" " + tab[i] + ",");
-            count++;
-
-        }
-        System.out.print(" "+tab[tab.length-1]);
-        System.out.print(" ]");
-    }
-
     public static void main(String[] args) {
         double[] sig1 = {751.764, 937.512, 514.681, 174.347, 547.524, 532.496, 147.377, 344.719, 314.567, 873.870,
                 520.411, 66.776, 138.441, 724.249, 857.060, 186.283, 57.462, 301.670, 513.621, 795.412,
@@ -249,7 +232,6 @@ public class CrossCorrelation2 {
                 775.564, 246.358, 396.523, 766.208, 757.313, 92.718, 194.953, 273.658, 244.090, 917.032,
                 332.647, 482.274, 609.948, 241.973, 340.474, 491.127, 913.084, 634.364, 740.989, 487.720,
                 939.214, 402.222, 474.717, 967.027, 457.602, 586.331, 798.670, 516.089, 418.824, 586.045};
-        double[] cross = crosscorrelation(sig1, sig2);
-        afficheTab(cross);
+        crosscorrelation(sig1, sig2);
     }
 }
